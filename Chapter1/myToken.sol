@@ -11,8 +11,8 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 
 contract myToken is ERC20Burnable, Ownable {
     
-    constructor(string memory _name, string memory _symbol, uint256 _initalAmount) ERC20(_name,_symbol) {
-        _mint(_msgSender(),_initalAmount);
+    constructor(string memory _name, string memory _symbol, uint256 _initialAmount) ERC20(_name,_symbol) {
+        _mint(_msgSender(),_initialAmount);
     }
 
     function mint(address _receiver, uint256 _amount) external onlyOwner() {
