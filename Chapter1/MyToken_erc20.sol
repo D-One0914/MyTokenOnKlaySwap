@@ -20,7 +20,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
     1 Peb = 1 peb
 */
 
-contract myToken is ERC20Burnable, Ownable {
+contract MyToken is ERC20Burnable, Ownable {
     
     constructor(string memory _name, string memory _symbol, uint256 _initialAmount) ERC20(_name,_symbol) {
         _mint(_msgSender(),_initialAmount);

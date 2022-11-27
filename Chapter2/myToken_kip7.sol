@@ -18,7 +18,7 @@ import "https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/tok
     1 Peb = 1 peb
 */
 
-contract myToken is KIP7Burnable {
+contract MyToken is KIP7Burnable {
     
     address public owner; 
     constructor(string memory _name, string memory _symbol, uint256 _initialAmount) KIP7(_name,_symbol) {
