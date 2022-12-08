@@ -21,8 +21,47 @@ import "https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/tok
     1 Klay = 10^18 = 1000000000000000000 peb
     1 Gpeb = 10^9 = 10000000 peb
     1 Peb = 1 peb
+
+    _Amount = 1 Token (1000000000000000000) <-> _Price = 10 klay (10 * 10^18)
+    _Maximumnumber = 2 번만 구매
+
+    1차: A ( 0x12..bc) -> 10 klay -> 1 token 
+    2차: A ( 0x12..bc) -> 10 klay -> 1 token 
+
+    3차: A ( 0x12..bc) -> 10 klay -> 1 token 구매 불가.  _Maximumnumber = 2  
+
+
+    0x73CB7c373F73E4e635Dd75837B8e2aDaF5247e7E
+    1klay - > 1D 토큰  
+
 */
 
+/*
+
+    klay : 클레이 주소
+    myToken: 현재 판매하는 토큰 주소
+    price: 판매 가격
+    amount: 회차 당 판매되는 토큰의 수
+    maximumNumber: 토큰 구매 가능 횟수  
+    stop: 판매 시작 여부
+       - false : 시작 (기본값)
+       - true : 정지
+    balance: 토큰 잔액 조회
+
+
+    setPrice : Price(토큰의 판매 가격) 변경
+    setAmount : Amount(회차 당 판매되는 토큰의 수) 변경
+    setMaximumNumber : maximumNumber(토큰 구매 가능 횟수) 변경
+    setStop: 판매 시작 여부 변경 
+       - false : 시작 (기본값)
+       - true : 정지
+    reset : 리셋 하기 
+        - 이전에 토큰을 횟수만큼 구매해서 현재 구매 못하는 사람도 다시 구매 가능
+   
+    withdraw: 토큰 출금
+
+
+*/
 
 contract MyPreSale is Ownable {
     
@@ -38,7 +77,7 @@ contract MyPreSale is Ownable {
     address public constant klay = address(0);
     IKIP7 public immutable myToken;
      
-    bool public stop;
+    bool public stop=true;
     uint256 public price;
     uint256 public amount;
     uint256 public maximumNumber;
