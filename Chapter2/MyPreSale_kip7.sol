@@ -4,6 +4,8 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 import "https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/IKIP7.sol";
 
 /*
+    단위 변환기(클레이튼 사용가능) : https://eth-converter.com/
+
     Decimal : 18 
     10000 Token = 10000 * 10^18 = 10^22 = 1000000000000000000000 
     1000 Token = 1000 * 10^18 = 10^21 = 1000000000000000000000 
